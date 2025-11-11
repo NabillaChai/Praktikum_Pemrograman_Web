@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Clarity - Clear Solutions for Digital Challenges</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+    body {
+      font-family: 'Inter', sans-serif;
+      overflow-x: hidden;
+      color: #333;
+      background: #fff;
+    }
+
+    :root {
+      --primary: #4E56C0;
+      --secondary: #9B5DE0;
+      --accent: #FDCFFA;
+    }
+
+    /* ==== NAVBAR ==== */
+    .navbar {
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      font-weight: 800;
+      font-size: 1.6rem;
+    }
+    .navbar-logo {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 900;
+      margin-right: 10px;
+      font-size: 1.2rem;
+    }
+    .navbar-brand span {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .nav-link {
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .nav-link:hover {
+      color: var(--secondary) !important;
+    }
+
+    /* ==== HERO ==== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 60%, var(--accent) 100%);
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px 100px;
+    }
+    .hero h1 {
+      font-weight: 900;
+      font-size: 3.4rem;
+    }
+    .hero h1 span {
+      color: var(--accent);
+    }
+    .hero p {
+      max-width: 720px;
+      margin: 20px auto 40px;
+      font-size: 1.2rem;
+      opacity: 0.95;
+    }
+    .btn-gradient {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      font-weight: 700;
+      border-radius: 50px;
+      padding: 12px 36px;
+      transition: 0.3s;
+    }
+    .btn-gradient:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(78,86,192,0.3);
+    }
+
+    /* ==== FEATURES ==== */
+    #features {
+      background: linear-gradient(to bottom, #fff 0%, #f9f6ff 100%);
+      padding: 140px 0;
+    }
+    .section-subtitle {
+      color: var(--secondary);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .feature-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 50px 30px;
+      transition: 0.4s;
+      border: 1px solid #f0f0f0;
+      height: 100%;
+    }
+    .feature-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+    }
+    .icon-box {
+      width: 80px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      border-radius: 20px;
+      color: #fff;
+      font-size: 2rem;
+      margin: 0 auto 25px;
+    }
+
+    /* ==== ABOUT ==== */
+    #about {
+      background: linear-gradient(to bottom, #f9f6ff 0%, #fff 100%);
+      padding: 120px 0;
+    }
+    #about img {
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(155,93,224,0.2);
+    }
+    .stat {
+      font-size: 2.5rem;
+      font-weight: 900;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ==== CONTACT ==== */
+    #contact {
+      background: linear-gradient(to bottom, #fff 0%, #f8f7ff 100%);
+      padding: 120px 0;
+    }
+    .form-control:focus {
+      border-color: var(--secondary);
+      box-shadow: 0 0 0 0.25rem rgba(155,93,224,0.2);
+    }
+
+    /* ==== FOOTER ==== */
+    footer {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff;
+      padding: 80px 0 40px;
+    }
+    footer a {
+      color: rgba(255,255,255,0.8);
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    footer a:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top py-3">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <div class="navbar-logo">C</div>
+        <span>Clarity</span>
+      </a>
+      <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
+        <ul class="navbar-nav align-items-center gap-3">
+          <li class="nav-item"><a class="nav-link text-dark" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link text-dark" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="btn btn-gradient ms-2" href="#">Get Started</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="hero">
+    <div class="container">
+      <h1 class="fw-bold mb-3">Clear Solutions for <br><span>Digital Challenges</span></h1>
+      <p>Empower your business with next-generation technology crafted to simplify, accelerate, and innovate.</p>
+      <a href="#" class="btn btn-gradient btn-lg me-3">Start Free Trial</a>
+      <a href="#" class="btn btn-outline-light btn-lg"><i class="fas fa-play-circle me-2"></i>Watch Demo</a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="container text-center">
+      <p class="section-subtitle">Our Capabilities</p>
+      <h2 class="fw-bold display-6 mb-3">Why Choose <span class="text-primary">Clarity</span>?</h2>
+      <p class="lead text-muted mb-5">We deliver digital excellence with clarity, performance, and trust — tailored to your growth journey.</p>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="feature-card h-100">
+            <div class="icon-box"><i class="fas fa-rocket"></i></div>
+            <h4>Lightning Fast Performance</h4>
+            <p>Experience speed at every click. Clarity ensures optimized performance and seamless operations, no matter the scale.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card h-100">
+            <div class="icon-box"><i class="fas fa-shield-alt"></i></div>
+            <h4>Enterprise Security</h4>
+            <p>Built with multi-layer encryption and advanced monitoring, our platform guarantees data safety and business reliability.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="feature-card h-100">
+            <div class="icon-box"><i class="fas fa-headset"></i></div>
+            <h4>24/7 Expert Support</h4>
+            <p>Our dedicated support team is always available to ensure your operations run smoothly — day and night, all year round.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <h2 class="fw-bold display-6 mb-4">Building the Future, One Solution at a Time</h2>
+          <p class="lead">Clarity combines innovation and simplicity to solve real-world digital challenges. We believe clarity is the foundation of every great technology.</p>
+          <p class="text-secondary">Our global team works together to design experiences that transform complexity into seamless, intuitive solutions — empowering thousands of businesses worldwide.</p>
+          <div class="row text-center mt-5">
+            <div class="col">
+              <div class="stat">500+</div>
+              <p>Clients</p>
+            </div>
+            <div class="col">
+              <div class="stat">1K+</div>
+              <p>Projects</p>
+            </div>
+            <div class="col">
+              <div class="stat">50+</div>
+              <p>Experts</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" alt="Team" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold display-6 mb-3">Let’s Start Something Amazing</h2>
+        <p class="lead">Ready to elevate your business? Reach out and let’s shape the future together.</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <form class="bg-white p-5 rounded-4 shadow-lg">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Full Name</label>
+                <input type="text" class="form-control form-control-lg" placeholder="NabChai">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-bold">Email Address</label>
+                <input type="email" class="form-control form-control-lg" placeholder="NabChai@example.com">
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-bold">Subject</label>
+                <input type="text" class="form-control form-control-lg" placeholder="How can we help?">
+              </div>
+              <div class="col-12">
+                <label class="form-label fw-bold">Message</label>
+                <textarea rows="5" class="form-control form-control-lg" placeholder="Tell us about your project..."></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-gradient w-100 btn-lg mt-3">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-md-4">
+          <h4 class="fw-bold">Clarity</h4>
+          <p>Clear solutions for digital challenges. Simplifying technology for everyone.</p>
+        </div>
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3">Company</h5>
+          <ul class="list-unstyled">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5 class="fw-bold mb-3">Follow Us</h5>
+          <div class="d-flex gap-3">
+            <a href="#"><i class="fab fa-facebook-f fs-4"></i></a>
+            <a href="#"><i class="fab fa-twitter fs-4"></i></a>
+            <a href="#"><i class="fab fa-instagram fs-4"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in fs-4"></i></a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-light opacity-25">
+      <p class="text-center mb-0">© 2025 Clarity Technologies.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
