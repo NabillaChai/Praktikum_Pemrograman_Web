@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <i class="fas fa-cloud-sun"></i> Weather Dashboard
+        </div>
+        
+        <div class="navbar-search">
+            <input 
+                type="text" 
+                class="search-input" 
+                id="citySearch" 
+                placeholder="Search for a city..."
+                autocomplete="off"
+            >
+            <button class="search-btn" id="searchBtn"><i class="fas fa-search"></i></button>
+            <div class="autocomplete-suggestions" id="suggestions"></div>
+        </div>
+
+        <div class="navbar-controls">
+            <div class="unit-switch">
+                <button class="unit-option active" id="celsiusBtn" onclick="setUnit('metric')">°C</button>
+                <button class="unit-option" id="fahrenheitBtn" onclick="setUnit('imperial')">°F</button>
+            </div>
+            <button class="refresh-btn" id="refreshBtn" title="Refresh weather data"><i class="fas fa-sync-alt"></i></button>
+            <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Error Message -->
+        <div class="error-message" id="errorMessage"></div>
+
+        <!-- Current Weather -->
+        <div class="current-weather" id="currentWeather">
+            <div class="loading" id="loadingCurrent">
+                <div class="spinner"></div>
+                <p>Loading weather data...</p>
+            </div>
+        </div>
+
+        <!-- Forecast -->
+        <div class="forecast-section" id="forecastSection">
+            <h2 class="section-title"><i class="fas fa-calendar-alt"></i> 5-Day Forecast</h2>
+            <div class="forecast-grid" id="forecastGrid"></div>
+        </div>
+
+        <!-- Favorites -->
+        <div class="favorites-section">
+            <h3 class="section-title"><i class="fas fa-star"></i> Favorite Cities</h3>
+            <div class="favorites-grid" id="favoritesGrid">
+                <p style="color: var(--text-secondary); font-size: 15px;">No favorite cities yet. Search for a city and add it to favorites!</p>
+            </div>
+        </div>
+    </div>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
